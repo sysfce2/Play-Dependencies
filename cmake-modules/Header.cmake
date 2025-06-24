@@ -26,6 +26,7 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL "${CMAKE_SOURCE_DIR}")
 		set(TARGET_PLATFORM_JS TRUE)
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexceptions")
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+		add_definitions(-DHAVE_UNISTD_H) # Needed for zlib to build properly
 	else()
 		message("-- Generating for Unix compatible platform --")
 		set(TARGET_PLATFORM_UNIX TRUE)
